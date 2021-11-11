@@ -17,7 +17,7 @@ export class CatsResolver {
     return this.catsService.findAll();
   }
 
-  @Mutation(() => [CreateCatDto])
+  @Mutation(() => CreateCatDto)
   async createCat(@Args('input') input: CatInput) {
     return this.catsService.create(input);
   }

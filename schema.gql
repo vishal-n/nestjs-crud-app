@@ -15,7 +15,7 @@ type Query {
 }
 
 type Mutation {
-  createCat(input: CatInput!): [CreateCatDto!]!
+  createCat(input: CatInput!): CreateCatDto!
 }
 
 input CatInput {
