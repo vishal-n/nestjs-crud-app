@@ -17,8 +17,18 @@ export class CatsResolver {
     return this.catsService.findAll();
   }
 
+  @Query(() => CreateCatDto)
+  async cat(@Args('id') id: string) {
+    return this.catsService.findOne(id);
+  }
+
   @Mutation(() => CreateCatDto)
   async createCat(@Args('input') input: CatInput) {
     return this.catsService.create(input);
+  }
+
+  @Mutation(() => CreateCatDto)
+  async deleteCat(@Args('id') id: string) {
+    return this.catsService.delete(id);
   }
 }
