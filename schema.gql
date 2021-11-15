@@ -18,6 +18,7 @@ type Query {
 type Mutation {
   createCat(input: CatInput!): CreateCatDto!
   deleteCat(id: String!): CreateCatDto!
+  updateCat(newBreed: String!, newName: String!, newAge: Float!, id: String!): CreateCatDto!
 }
 
 input CatInput {

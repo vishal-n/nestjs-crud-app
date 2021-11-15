@@ -24,4 +24,17 @@ export class CatsService {
   async delete(id: string): Promise<Cat> {
     return await this.catModel.findByIdAndRemove(id);
   }
+
+  async update(
+    id: string,
+    newAge: number,
+    newName: string,
+    newbreed: string,
+  ): Promise<Cat> {
+    const currRecord = await this.findOne(id);
+    (await currRecord).age = newAge;
+    (await currRecord).name = newName;
+    (await currRecord).breed = newbreed;
+    return await currRecord.save();
+  }
 }

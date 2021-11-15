@@ -3,9 +3,9 @@ import { InputType, Field, Int } from '@nestjs/graphql';
 @InputType()
 export class CatInput {
   @Field()
-  readonly name: string;
+  name: string;
   @Field(() => Int)
-  readonly age: number;
+  age: number;
   @Field()
-  readonly breed: string;
+  breed: string;
 }
